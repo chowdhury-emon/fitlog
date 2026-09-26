@@ -27,7 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
 
-        <header className="sticky top-0 border-b border-border bg-background/50 backdrop-blur-xs">
+        <header className="sticky top-0 z-100 border-b border-border bg-background/90 backdrop-blur-sm">
           <Navbar />
         </header>
         <main className="min-h-screen p-4 *:container *:mx-auto">
