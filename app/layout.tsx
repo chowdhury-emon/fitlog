@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,10 +30,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <header className="sticky top-0 border-b border-border bg-background/50 backdrop-blur-xs">
           <Navbar />
         </header>
-        <main className="min-h-screen p-4">
+        <main className="min-h-screen p-4 *:container *:mx-auto">
           {children}
         </main>
-        <footer></footer>
+        <footer className="border-t border-border bg-background">
+          <Footer />
+        </footer>
 
       </body>
     </html>
