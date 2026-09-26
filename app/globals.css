@@ -4,6 +4,7 @@
   --background: #0C0D10;
   --surface: #15171D;
   --primary: #78F800;
+  --border: #222630;
 
   --text: #FFFFFF;
   --muted-text: #9CA3AF;
@@ -13,11 +14,18 @@
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-primary: var(--primary);
-
+  --color-border: var(--border);
   --color-text: var(--text);
-  --color-muted-text: var(--muted-text);
+  --color-muted: var(--muted-text);
+
   --font-sans: var(--font-inter);
   --font-heading: var(--font-oswald);
+}
+
+@layer base {
+  h1, h2, h3 {
+    @apply font-heading
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {

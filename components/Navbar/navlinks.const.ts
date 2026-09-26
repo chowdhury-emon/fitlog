@@ -1,0 +1,25 @@
+import { ActionLinks, NavLinks } from "@/components/Navbar/nav.type";
+
+export const NAVLINKS: NavLinks[] = [
+    {
+        label: "workouts",
+        path: "/"
+    },
+    {
+        label: "My plan",
+        path: "my-plan"
+    }
+];
+
+export const ACTIONLINKS: ActionLinks[] = [
+    {
+        label: "plan",
+        path: "my-plan",
+        value: 0
+    },
+    {
+        label: "saved",
+        path: "my-plan",
+        value: 0
+    }
+] 
