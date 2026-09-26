@@ -11,6 +11,7 @@ export default function WalkoutCard({ walkout }: walkoutCardProps) {
     return (
         <article className="grid max-w-md bg-surface border border-border rounded-2xl overflow-hidden">
             <Link href={`exercise/${walkout.id}`}>
+
                 <figure className="relative w-full h-50">
                     <Image src={walkout.image} fill alt={walkout.name} className="object-cover" />
                 </figure>
@@ -31,6 +32,7 @@ export default function WalkoutCard({ walkout }: walkoutCardProps) {
                         <span> <AiOutlineStar /> {walkout.rating}</span>
                     </div>
                 </div>
+                
             </Link>
         </article>
     )
