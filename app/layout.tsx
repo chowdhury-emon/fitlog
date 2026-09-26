@@ -23,7 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${oswald.variable} h-full antialiased`}
+      className={`${inter.variable} ${oswald.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">
 

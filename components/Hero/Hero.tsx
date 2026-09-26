@@ -7,9 +7,9 @@ export default function Hero() {
                 <h3 className="text-sm font-semibold uppercase text-primary font-sans">WORKOUT LIBRARY</h3>
                 <h1 className="w-70 sm:w-auto text-6xl md:text-7xl font-bold uppercase">TRAIN WITH INTENT. LOG EVERY SET.</h1>
                 <p className="text-sm md:text-base text-muted max-w-[80%] text-pretty">FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and watch the week's work add up.</p>
-                <button className="bg-primary text-background text-xs font-bold uppercase rounded-lg p-6 py-3 my-4">
+                <a href="#library" className="bg-primary text-background text-xs font-bold uppercase rounded-lg p-6 py-3 my-4">
                     BROWSE WORKOUTS
-                </button>
+                </a>
             </div>
             <figure className="relative w-full min-h-80">
                 <Image src={"/banner.svg"} fill className="object-contain" alt="Fitlog Banner Image" />
