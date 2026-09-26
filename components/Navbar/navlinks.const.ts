@@ -1,4 +1,4 @@
-import { ActionLinks, NavLinks } from "@/components/Navbar/nav.type";
+import { ActionLinks, NavLinks } from "@/types/nav.type";
 
 export const NAVLINKS: NavLinks[] = [
     {
