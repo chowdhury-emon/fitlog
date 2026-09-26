@@ -13,7 +13,7 @@ export default async function WalkoutLibrary() {
       </div>
 
       {/* The Grid of Walkout Library */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 my-8 mb-12">
         {walkoutData.map(walkout => (
           <div key={walkout.id}>
             <WalkoutCard walkout={walkout}></WalkoutCard>
