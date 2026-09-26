@@ -10,7 +10,7 @@ interface WorkoutCardProps {
 export default function WorkoutCard({ workout }: WorkoutCardProps) {
     return (
         <article className="grid bg-surface border border-border rounded-2xl overflow-hidden hover:border-primary/30">
-            <Link href={`workout-details/${workout.id}`}>
+            <Link href={`/workout-details/${workout.id}`}>
 
                 <figure className="relative w-full h-50">
                     <Image src={workout.image} fill alt={workout.name} className="object-cover" />
