@@ -42,8 +42,8 @@ export default async function WorkoutDetails({ params }: { params: Promise<{ id:
     ];
 
     return (
-        <section className="grid md:grid-cols-2 gap-10 my-8">
-            <figure className="relative w-full min-h-100 max-h-210 rounded-2xl aspect-9/16 overflow-hidden">
+        <section className="grid md:grid-cols-2 gap-10 my-8 mt-0">
+            <figure className="relative w-full min-h-100 max-h-100 md:max-h-210 rounded-2xl aspect-9/16 overflow-hidden">
                 <Image src={workoutDeatails.image} fill alt="workoutDeatails.name" className="object-cover"></Image>
             </figure>
             <div className="grid gap-4 place-content-baseline">

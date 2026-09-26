@@ -7,19 +7,19 @@ export const NAVLINKS: NavLinks[] = [
     },
     {
         label: "My plan",
-        path: "my-plan"
+        path: "/my-plan"
     }
 ];
 
 export const ACTIONLINKS: ActionLinks[] = [
     {
         label: "plan",
-        path: "my-plan",
+        path: "/my-plan",
         value: 0
     },
     {
         label: "saved",
-        path: "my-plan",
+        path: "/my-plan",
         value: 0
     }
 ] 
