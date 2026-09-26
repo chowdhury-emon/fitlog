@@ -9,7 +9,7 @@ interface walkoutCardProps {
 
 export default function WalkoutCard({ walkout }: walkoutCardProps) {
     return (
-        <article className="grid bg-surface border border-border rounded-2xl overflow-hidden">
+        <article className="grid bg-surface border border-border rounded-2xl overflow-hidden hover:border-primary/30">
             <Link href={`exercise/${walkout.id}`}>
 
                 <figure className="relative w-full h-50">
