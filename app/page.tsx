@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero/Hero";
-import WorkoutLibrary from "@/components/Workout/WorkoutLibrary";
+import WorkoutLibrary from "@/components/WorkoutLibrary/WorkoutLibrary";
 
 export default function Home() {
   return (

@@ -1,4 +1,4 @@
-import WorkoutCard from "@/components/Workout/WorkoutCard";
+import WorkoutCard from "@/components/WorkoutLibrary/WorkoutCard";
 import { getWorkoutData } from "@/lib/api";
 
 export default async function WorkoutLibrary() {
@@ -7,7 +7,7 @@ export default async function WorkoutLibrary() {
   return (
     <section id="library">
       <div>
-        <h2 className="text-2xl font-bold uppercase">The Library</h2>
+        <h1 className="text-2xl font-bold uppercase">The Library</h1>
         <p className="text-muted">Twelve lifts covering every major muscle group.</p>
       </div>
 
