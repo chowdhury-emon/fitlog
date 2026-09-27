@@ -79,12 +79,12 @@ export default function MyPlan() {
         }
 
         {/* EMPTY MESSAGE */}
-        <div className={`border border-border border-dashed rounded-2xl place-items-center py-20
+        <div className={`border border-border border-dashed rounded-2xl place-items-center p-4 py-20
         ${activeLink === "plan" && planWokout?.length === 0 ||
             activeLink === "saved" && savedWorkout?.length === 0
             ? "grid" : "hidden"} `} >
           <h2 className="text-xl font-bold">NOTHING HERE YET</h2>
-          <p className="text-sm/relaxed text-muted">Browse the library and add a lift to get today moving.</p>
+          <p className="text-xs/relaxed sm:text-sm text-muted">Browse the library and add a lift to get today moving.</p>
           <Link className="p-4 py-2 mt-4 bg-primary text-background text-sm font-semibold rounded-full" href={"/"}>
             Go to Workouts
           </Link>
