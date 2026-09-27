@@ -25,9 +25,9 @@ export default function MyPlanWokoutCard({ workout, activeLinkPlan = false }: { 
     }
 
     return (
-        <article className="flex justify-between p-4 bg-surface border border-border rounded-2xl overflow-hidden hover:border-primary/30">
-            <div className="grid grid-cols-2 bg-surface">
-                <figure className="relative w-full h-28 rounded-xl overflow-hidden">
+        <article className="grid place-self-center lg:w-full gap-4 w-fit lg:flex justify-between p-4 bg-surface border border-border rounded-2xl overflow-hidden hover:border-primary/30">
+            <div className="grid sm:grid-cols-2 bg-surface">
+                <figure className="relative w-full h-50 sm:h-28 rounded-xl overflow-hidden">
                     <Image src={workout.image} fill alt={workout.name} className="object-cover" />
                 </figure>
 
