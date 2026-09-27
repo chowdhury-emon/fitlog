@@ -24,7 +24,10 @@
 
 @layer base {
   h1, h2, h3 {
-    @apply font-heading
+    @apply font-heading;
+  }
+  button{
+    @apply cursor-pointer active:scale-[0.95] transition-all;
   }
 }
 

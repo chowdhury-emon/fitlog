@@ -1,3 +1,5 @@
+import AddPlanBtn from "@/components/Buttons/AddPlanBtn";
+import SaveLaterBtn from "@/components/Buttons/SaveLaterBtn";
 import { getWorkoutDataById } from "@/lib/api";
 import Image from "next/image";
 import { LuBookmark, LuCalendarPlus2 } from "react-icons/lu";
@@ -9,48 +11,49 @@ interface TableContent {
 
 export default async function WorkoutDetails({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
-    const workoutDeatails = await getWorkoutDataById(id);
+    const workout = await getWorkoutDataById(id);
+
     const tableContent: TableContent[] = [
         {
             label: 'equipment',
-            value: `${workoutDeatails.equipment}`
+            value: `${workout.equipment}`
         },
         {
             label: 'difficulty',
-            value: `${workoutDeatails.difficulty}`
+            value: `${workout.difficulty}`
         },
         {
             label: 'sets',
-            value: `${workoutDeatails.sets}`
+            value: `${workout.sets}`
         },
         {
             label: 'reps',
-            value: `${workoutDeatails.reps}`
+            value: `${workout.reps}`
         },
         {
             label: 'duration',
-            value: `${workoutDeatails.duration} min`
+            value: `${workout.duration} min`
         },
         {
             label: 'calories',
-            value: `${workoutDeatails.caloriesBurned} kcal`
+            value: `${workout.caloriesBurned} kcal`
         },
         {
             label: 'rating',
-            value: `${workoutDeatails.rating}`
+            value: `${workout.rating}`
         }
     ];
 
     return (
         <section className="grid md:grid-cols-2 gap-10 my-8 mt-0">
             <figure className="relative w-full min-h-100 max-h-100 md:max-h-210 rounded-2xl aspect-9/16 overflow-hidden">
-                <Image src={workoutDeatails.image} fill alt="workoutDeatails.name" className="object-cover"></Image>
+                <Image src={workout.image} fill alt="workoutDeatails.name" className="object-cover"></Image>
             </figure>
             <div className="grid gap-4 place-content-baseline">
-                <h1 className="text-4xl font-bold">{workoutDeatails.name}</h1>
-                <p className="text-muted">{workoutDeatails.description}</p>
+                <h1 className="text-4xl font-bold">{workout.name}</h1>
+                <p className="text-muted">{workout.description}</p>
                 <div >
-                    {workoutDeatails.muscleGroups.map((item, index) => (
+                    {workout.muscleGroups.map((item, index) => (
                         <span key={index} className="p-1 px-3 mr-2 rounded-full bg-primary text-surface text-xs uppercase font-bold">
                             {item}
                         </span>
@@ -68,7 +71,7 @@ export default async function WorkoutDetails({ params }: { params: Promise<{ id:
 
                 <div>
                     <h2 className="uppercase font-bold font-sans">Instructions</h2>
-                    {workoutDeatails.instructions.map((instruction, index) => (
+                    {workout.instructions.map((instruction, index) => (
                         <ol key={index} className="text-sm text-neutral-300 font-light my-4">
                             <li className=""><span>{++index}.</span> {instruction}</li>
                         </ol>
@@ -76,15 +79,8 @@ export default async function WorkoutDetails({ params }: { params: Promise<{ id:
                 </div>
 
                 <div className="grid lg:flex gap-4 w-full max-w-100 md:max-w-full place-self-center">
-                    <button className="flex items-center justify-center gap-2 p-8 py-3 text-sm font-bold rounded-xl bg-primary text-background">
-                        <LuCalendarPlus2 className="text-base"/>
-
-                        Add to today's plan
-                    </button>
-                    <button className="flex items-center justify-center gap-2 p-8 py-3 text-sm font-medium rounded-xl border border-border">
-                        <LuBookmark className="text-base"/>
-                        Save for later
-                    </button>
+                    <AddPlanBtn workout={workout} />
+                    <SaveLaterBtn workout={workout} />
                 </div>
             </div>
 

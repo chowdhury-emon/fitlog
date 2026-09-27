@@ -3,6 +3,8 @@ import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import WorkoutContextProvider from "@/app/contexts/WorkoutContext";
+import { Slide, ToastContainer } from "react-toastify";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,17 +28,31 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${oswald.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">
+        <WorkoutContextProvider>
+          <header className="sticky top-0 z-100 border-b border-border bg-background/90 backdrop-blur-sm">
+            <Navbar />
+          </header>
+          <main className="min-h-screen p-4 *:container *:mx-auto">
+            {children}
+          </main>
+          <footer className="border-t border-border bg-background">
+            <Footer />
+          </footer>
+        </WorkoutContextProvider>
 
-        <header className="sticky top-0 z-100 border-b border-border bg-background/90 backdrop-blur-sm">
-          <Navbar />
-        </header>
-        <main className="min-h-screen p-4 *:container *:mx-auto">
-          {children}
-        </main>
-        <footer className="border-t border-border bg-background">
-          <Footer />
-        </footer>
-
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+          transition={Slide}
+        />
       </body>
     </html>
   );
