@@ -11,16 +11,16 @@ FitLog is a modern fitness instruction application designed to help and motivate
 ## Key Features
 
 1. Workout Library
-   Browse a curated collection of workouts.
+   <br/>Browse a curated collection of workouts.
 
-2. Daily Workout Planning
-   Add workouts to a personalized plan. Users can mark workouts as done or remove them from the plan.
+3. Daily Workout Planning
+    <br/>Add workouts to a personalized plan. Users can mark workouts as done or remove them from the plan.
 
-3. Saved Workouts
-   Save favorite exercises and routines for later so users can visit and see again, user can view the details and remove them.
+5. Saved Workouts
+    <br/>Save favorite exercises and routines for later so users can visit and see again, user can view the details and remove them.
 
-4. Smart Sorting
-   Sort workouts by duration, calories burned, or rating to quickly compare and choose the best option.
+6. Smart Sorting
+    <br/>Sort workouts by duration, calories burned, or rating to quickly compare and choose the best option.
 
-5. Workout Details
-   View specific workout information through dedicated detail pages.
+7. Workout Details
+    <br/>View specific workout information through dedicated detail pages.
