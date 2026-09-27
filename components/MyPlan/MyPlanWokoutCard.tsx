@@ -11,15 +11,15 @@ import { toast } from "react-toastify";
 export default function MyPlanWokoutCard({ workout, activeLinkPlan = false }: { workout: Workout, activeLinkPlan?: boolean }) {
     const { planWokout, setPlanWokout, savedWorkout, setSavedWorkout } = useContext(WorkoutContext);
 
-    const handleWorkoutRemove = () => {
+    const handleWorkoutRemove = (message: string) => {
         if (activeLinkPlan) {
             const newItems = planWokout!.filter(item => item.id !== workout.id)
             setPlanWokout!(newItems);
-            toast.success(`${workout.name} removed form today's plan`);
+            toast.success(`${workout.name} ${message}`);
         } else {
             const newItems = savedWorkout!.filter(item => item.id !== workout.id)
             setSavedWorkout!(newItems);
-            toast.success(`${workout.name} removed form today's plan`);
+            toast.success(`${workout.name} ${message}`);
         }
 
     }
@@ -50,14 +50,14 @@ export default function MyPlanWokoutCard({ workout, activeLinkPlan = false }: { 
                 </Link>
                 {activeLinkPlan &&
                     <button className="p-4 py-2 rounded-full flex items-center gap-2 bg-primary text-surface font-semibold"
-                        onClick={handleWorkoutRemove}
+                        onClick={() => handleWorkoutRemove("marked as done")}
                     >
                         <LuCheck />
                         Mark as Done
                     </button>
                 }
                 <button className="py-2 font-black text-base rounded-full text-muted hover:text-red-400"
-                    onClick={handleWorkoutRemove}
+                    onClick={() => handleWorkoutRemove("removed form today's plan")}
                 >
                     <LuX />
                 </button>
