@@ -15,11 +15,9 @@ export const ACTIONLINKS: ActionLinks[] = [
     {
         label: "plan",
         path: "/my-plan",
-        value: 0
     },
     {
         label: "saved",
         path: "/my-plan",
-        value: 0
     }
 ] 

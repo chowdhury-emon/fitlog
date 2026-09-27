@@ -12,9 +12,10 @@ export default function AddPlanBtn({ workout }: { workout: Workout }) {
     const handlePlanWorkout = () => {
         if (planWokout?.includes(workout)) {
             toast.warn(`${workout.name} already exist`)
+        } else {
+            setPlanWokout!(prev => [...prev, workout])
+            console.log(planWokout)
         }
-        setPlanWokout!(prev => [...prev, workout])
-        console.log(planWokout)
     }
 
     return (
