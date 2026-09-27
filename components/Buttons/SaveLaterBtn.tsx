@@ -9,11 +9,12 @@ export default function SaveLaterBtn({ workout }: { workout: Workout }) {
     const { savedWorkout, setSavedWorkout } = useContext(WorkoutContext)
 
     const handleSaveWorkout = () => {
-        if (savedWorkout?.includes(workout)) {
+        if (savedWorkout?.some(item => item.id === workout.id)) {
             toast.warn(`${workout.name} already exist`)
         }
         else {
             setSavedWorkout!(prev => [...prev, workout])
+            toast.success(`${workout.name} saved for later`)
         }
     }
 
