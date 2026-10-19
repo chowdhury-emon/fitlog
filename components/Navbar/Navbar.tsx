@@ -3,12 +3,12 @@ import { WorkoutContext } from "@/app/contexts/WorkoutContext";
 import { ACTIONLINKS, NAVLINKS } from "@/components/Navbar/navlinks.const";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useContext, useState } from 'react';
 import { HiMenu } from "react-icons/hi";
 
 export default function Navbar() {
-    const active = usePathname();
+    const activeRoute = usePathname();
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const { planWokout, savedWorkout } = useContext(WorkoutContext)
 
@@ -30,7 +30,7 @@ export default function Navbar() {
             <nav className={`sm:flex ${openMenu ? "grid fixed top-15 left-0 bg-background w-full p-4 rounded-b-2xl border-b border-border" : "hidden"}`}>
                 {NAVLINKS.map((link, index) => (
                     <Link key={index}
-                        className={`p-4 py-2 capitalize text-muted ${active === link.path ? "bg-primary/10 text-primary rounded-full" : ""}`}
+                        className={`p-4 py-2 capitalize text-muted ${activeRoute === link.path ? "bg-primary/10 text-primary rounded-full" : ""}`}
                         href={link.path}
                     >
                         {link.label}

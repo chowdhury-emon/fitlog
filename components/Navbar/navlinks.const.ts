@@ -14,10 +14,10 @@ export const NAVLINKS: NavLinks[] = [
 export const ACTIONLINKS: ActionLinks[] = [
     {
         label: "plan",
-        path: "/my-plan",
+        path: "/my-plan?tab=plan",
     },
     {
         label: "saved",
-        path: "/my-plan",
+        path: "/my-plan?tab=saved",
     }
 ] 
